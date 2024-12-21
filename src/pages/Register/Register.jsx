@@ -13,7 +13,7 @@ const Register = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
         //password validation
         if (!/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$/.test(password)) {
@@ -22,10 +22,10 @@ const Register = () => {
         }
         createUser(email, password)
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
             })
             .catch((err) => {
-                console.log(err.message);
+                // console.log(err.message);
             })
 
     }

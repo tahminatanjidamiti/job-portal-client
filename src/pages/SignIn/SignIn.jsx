@@ -7,6 +7,7 @@ import SocialLogin from '../shared/SocialLogin';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 
+
 const SignIn = () => {
 
     const { signInUser } = useContext(AuthContext);
@@ -19,15 +20,15 @@ const SignIn = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
         signInUser(email, password)
             .then(result => {
-                console.log('sign in', result.user)
+                // console.log('sign in', result.user)
                 navigate(from);
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
             })
 
     }

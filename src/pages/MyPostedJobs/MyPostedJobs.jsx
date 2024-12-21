@@ -6,7 +6,7 @@ const MyPostedJobs = () => {
     const { user } = useAuth();
     const [jobs, setJobs] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/jobs?email=${user.email}`)
+        fetch(`https://job-portal-server-six-mocha.vercel.app/jobs?email=${user.email}`)
             .then(res => res.json())
             .then(data => setJobs(data))
     }, [user.email])
@@ -28,7 +28,7 @@ const MyPostedJobs = () => {
                     <tbody>
                         {
                             jobs.map((job, index) =>
-                                <tr>
+                                <tr key={job._id}>
                                     <th>{index + 1}</th>
                                     <td>{job.title}</td>
                                     <td>{job.applicationDeadline}</td>
